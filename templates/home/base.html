@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WebApp101</h1>
+    <p>
+        | <a href="{% url 'home:index' %}">Home</a>
+
+    {% if user.is_authenticated %}    
+        | <a href="">{{user}}</a>
+    {% else %}
+        | {{user}}
+    {% endif %}
+    </p>
+    <hr>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
